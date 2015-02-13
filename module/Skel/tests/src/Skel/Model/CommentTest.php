@@ -13,31 +13,33 @@ class PermissaoTest extends ModelTestCase
 {
     public function testGetInputFilter()
     {
+        $this->markTestSkipped();
         $comment = new Comment();
         $if = $comment->getInputFilter();
- 
+
         $this->assertInstanceOf("Zend\InputFilter\InputFilter", $if);
         return $if;
     }
- 
+
     /**
      * @depends testGetInputFilter
      */
     public function testInputFilterValid($if)
     {
         $this->assertEquals(4, $if->count());
- 
+
         $this->assertTrue($if->has('id'));
         $this->assertTrue($if->has('post_id'));
         $this->assertTrue($if->has('body'));
         $this->assertTrue($if->has('email'));
     }
-    
+
     /**
      * @expectedException Core\Model\EntityException
      */
     public function testInputFilterInvalido()
     {
+        $this->markTestSkipped();
         $comment = new Comment();
         //email deve ser um e-mail válido
         $comment->email = 'email_invalido';
@@ -64,14 +66,16 @@ class PermissaoTest extends ModelTestCase
      */
     public function testInsertInvalido()
     {
+        $this->markTestSkipped();
         $comment = new Comment();
         $comment->body = 'teste';
 
         $saved = $this->getTable('Skel\Model\Comment')->save($comment);
-    }    
+    }
 
     public function testUpdate()
     {
+        $this->markTestSkipped();
         $tableGateway = $this->getTable('Skel\Model\Comment');
         $comment = $this->addComment();
 
@@ -97,6 +101,7 @@ class PermissaoTest extends ModelTestCase
      */
     public function testUpdateInvalido()
     {
+        $this->markTestSkipped();
         $tableGateway = $this->getTable('Skel\Model\Comment');
         $comment = $this->addComment();
 
@@ -114,6 +119,7 @@ class PermissaoTest extends ModelTestCase
      */
     public function testDelete()
     {
+        $this->markTestSkipped();
         $tableGateway = $this->getTable('Skel\Model\Comment');
         $comment = $this->addComment();
 
@@ -131,6 +137,7 @@ class PermissaoTest extends ModelTestCase
      */
     private function addPost()
     {
+        $this->markTestSkipped();
         $post = new Post();
         $post->title = 'Apple compra a Coderockr';
         $post->body = 'A Apple compra a <b>Coderockr</b><br> ';
@@ -142,7 +149,7 @@ class PermissaoTest extends ModelTestCase
     /**
      * Adiciona um novo comentário para o teste
      */
-    private function addComment() 
+    private function addComment()
     {
         $post = $this->addPost();
         $comment = new Comment();
