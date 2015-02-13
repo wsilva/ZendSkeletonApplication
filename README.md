@@ -1,6 +1,9 @@
 ZendSkeletonApplication
 =======================
 
+[![Build Status](https://travis-ci.org/wsilva/ZendSkeletonApplication.svg?branch=master)](https://travis-ci.org/wsilva/ZendSkeletonApplication)
+
+
 Introduction
 ------------
 This is a simple, skeleton application using the ZF2 MVC layer and module
@@ -8,7 +11,7 @@ systems, based in the [http://github.com/zendframework/ZendSkeletonApplication](
 
 Features added:
 
-- Core module with 
+- Core module with
     - TableGateway implementation
     - PHPUnit tests
     - Entity class
@@ -38,7 +41,7 @@ Virtual Host
     	ServerName zf2napratica.dev
 	    DocumentRoot /vagrant/zf2napratica/public
     	SetEnv APPLICATION_ENV "development"
-	    SetEnv PROJECT_ROOT "/vagrant/zf2napratica" 
+	    SetEnv PROJECT_ROOT "/vagrant/zf2napratica"
    		<Directory /vagrant/zf2napratica/public>
         	DirectoryIndex index.php
         	AllowOverride All
