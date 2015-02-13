@@ -1,8 +1,11 @@
 language: php
 php:
-    - "5.3"
+    - "5.4"
+    - "5.5"
+    - "5.6"
 before_script:
+    - composer self-update
     - composer install
-script: phpunit -c module/Skel/tests/phpunit.xml
-notifications:
-    webhooks: http://code-squad.com/travis/notification
+script: phpunit --configuration module/Skel/tests/phpunit.xml --coverage-text
+# notifications:
+#     webhooks: http://code-squad.com/travis/notification
