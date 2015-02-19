@@ -1,10 +1,19 @@
 language: php
 php:
     - "5.6"
-before_install:
-    - composer self-update
+
 before_script:
-    - composer install
-script: phpunit --configuration module/Skel/tests/phpunit.xml --coverage-text
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar install --dev --no-interaction
+
+script:
+    - mkdir -p build/logs
+    - php vendor/bin/phpunit --configuration module/Skel/tests/phpunit.xml
+
+after_script:
+    # - php vendor/bin/coveralls
+    # or enable logging
+    - php vendor/bin/coveralls -v
+
 # notifications:
 #     webhooks: http://code-squad.com/travis/notification
