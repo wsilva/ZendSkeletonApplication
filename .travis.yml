@@ -8,12 +8,12 @@ before_script:
 
 script:
     - mkdir -p build/logs
-    - php vendor/bin/phpunit --configuration module/Skel/tests/phpunit.xml
+    - vendor/bin/phpunit --configuration module/Skel/tests/phpunit.xml
 
-after_script:
+# after_script:
     # - php vendor/bin/coveralls
     # or enable logging
-    - php vendor/bin/coveralls -v
+    # - php vendor/bin/coveralls -v
 
 # notifications:
 #     webhooks: http://code-squad.com/travis/notification
